@@ -1,4 +1,6 @@
 #!/bin/bash
+
+#Firewall configuration to allow Nginx and OpenSSH traffic
 sudo ufw allow 'Nginx Full'
 sudo ufw allow 'OpenSSH'
 sudo ufw enable
