@@ -12,7 +12,7 @@ DB_LIST=$(mysql -u $USER -p $PWD -s -e "show databases;" 2>/dev/null | egrep -v 
 for DB in $DB_LIST; do
     BACKUP_NAME="${BACKUP_DIR}/${DB}_${DATE}.sql"
     
-    if ! mysqldump -h$HOST -u$USER -p$PWD -B $DB > "$BACKUP_NAME" 2>/dev/null; then
+    if ! mysqldump -u $USER -p $PWD -B $DB > "$BACKUP_NAME" 2>/dev/null; then
         echo "$BACKUP_NAME backup is unsuccessful!"
     else
         echo "$BACKUP_NAME backup is successful!"
