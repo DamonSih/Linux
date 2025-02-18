@@ -24,9 +24,9 @@ for DB in $DB_LIST; do
         
         # Backup each table
         if ! mysqldump -u $USER -p $PWD $DB $TABLE > "$BACKUP_NAME" 2>/dev/null; then
-            echo "$BACKUP_NAME backup unsuccessful!"  # Backup failed
+            echo "$BACKUP_NAME backup is unsuccessful!"  # Backup failed
         else
-            echo "$BACKUP_NAME backup successful!"  # Backup successful
+            echo "$BACKUP_NAME backup is successful!"  # Backup successful
         fi
     done 
 
